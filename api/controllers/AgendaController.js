@@ -65,6 +65,15 @@ class AgendaController {
 
     }
 
+    async listAg(req, res){
+
+        var result = await Agenda.ListAg();
+
+        res.json(result);
+
+
+    }
+
 
 }
 

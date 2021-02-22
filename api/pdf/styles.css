@@ -1,0 +1,39 @@
+  
+ h3 {
+    color: rgb(240, 0, 0);
+    margin: 1rem;
+  }
+  
+ table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+  }
+  
+ thead {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    background: #0078ff;
+    text-align: left;
+    color: #fff;
+  }
+  
+  th,
+  td {
+    font-size: 0.8rem;
+    padding: 1rem 1rem;
+  }
+  
+  td {
+    font-size: 0.8rem;
+  }
+  
+  tbody tr:nth-child(even) {
+    background: #0257ff17;
+  }
+  
+  td a {
+    margin-left: 10px;
+    decoration: none;
+  }
+  

@@ -1,7 +1,8 @@
 var knex = require('../database/connection');
 var bcrypt = require('bcrypt');
 var hash = require('crypto');
-
+var pdf = require('html-pdf');
+var ejs = require('ejs');
 class Agenda {
     async CreatAgend(
         date,
@@ -109,6 +110,35 @@ class Agenda {
         try {
             console.log(id_user);
             var result = await knex.select('*').from('agendamentos').where({id_user: id_user.id_user});
+            console.log(result);
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async ListAg(){
+        try {
+            var result = await knex.select('*').from('agendamentos').where({date: "2021-02-03"});
+            var options = { width: '160px', }
+            ejs.renderFile("./pdf/index.ejs",{list: result},
+             (error, html)=> {
+                if (error) {
+                    console.log(error);
+                }else{
+                    pdf.create(html, options).toFile("./lista_de_alunos.pdf", (err, res)=>{
+
+                        if (err) {
+                            console.log(err);
+                        }else{
+                            console.log(res);
+                        }
+                    })
+                }  
+             });
+
+            
+
             console.log(result);
             return result;
         } catch (error) {

@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt');
 
 const secret = "asdjkasdj_kqiouensdaslkdn7@#$*@jksjh";
 
-class AdminController {
+class UserController {
 
     async creatUser(req, res) {
         var {
@@ -111,4 +111,4 @@ class AdminController {
 
 }
 
-module.exports = new AdminController();
+module.exports = new UserController();

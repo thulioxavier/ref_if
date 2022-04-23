@@ -62,6 +62,7 @@ class UserController {
         var emailExists = await User.findEmail(email);
         // --------------
         console.log(emailExists);
+        
         if (emailExists != false) {
 
             var user = await User.findByEmail(email);
